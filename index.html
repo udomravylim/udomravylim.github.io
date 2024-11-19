@@ -1,30 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-
-<!--Link to styles-->
-<link rel="stylesheet" href="styles/styles.css">
+    <meta name="description" content="Portfolio of Your Name, a Web Design and Development major showcasing projects, skills, and contact information.">
+    <meta name="keywords" content="Portfolio, Web Design, Web Development, HTML, CSS, JavaScript, Projects">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Your Name's Portfolio">
+    <meta property="og:description" content="Explore my web design and development projects, skills, and contact information.">
+    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:url" content="https://your-portfolio.com">
+    <meta property="og:type" content="website">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <script src="./js/script.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <h1>Welcome To My Github Homepage</h1>
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <div class="container">
+            <h1 class="logo">Ravy Lim</h1>
+            <p class="major">Web Design and Development Major</p>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/ravy-lim/" target="_blank" rel="noopener noreferrer" class="button">Linkedin</a>
+                <a href="https://github.com/udomravylim?tab=repositories" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
+            </div>
+        </div>
     </header>
-    <main>
-        <ul>
-            <li><img src="images/upisnotjump-cant-let-you-through.gif" alt="not allow.gif ">
-            </li>
-            <li><img src="images/excited.gif" alt="not allow.gif ">
-            </li>
-            <li><img src="images/construction-lol.gif" alt="not allow.gif ">
-            </li>
-        </ul>
-    </main>
-    <footer></footer>
-</body>
 
+    <!-- Main Content -->
+    <main role="main">
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate web developer skilled in creating beautiful and functional websites. Welcome to my portfolio!</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>A brief description of the project. <a href="#" aria-label="View details of Project 1">View Project</a></p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A brief description of the project. <a href="#" aria-label="View details of Project 2">View Project</a></p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 id="contact-heading">Contact Me</h2>
+            <p>Have a question or want to work together? Drop me a message below!</p>
+
+            <!-- Contact Form -->
+            <form id="contactForm" action="/submit-form" method="POST" aria-labelledby="contact-heading">
+                <fieldset id="contactFieldset">
+                    <!-- <legend>Contact Form</legend> -->
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-describedby="nameError">
+                        <div id="nameError" class="form-error" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required aria-describedby="emailError">
+                        <div id="emailError" class="form-error" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..." required aria-describedby="messageError"></textarea>
+                        <div id="messageError" class="form-error" aria-live="polite"></div>
+                    </div>
+                    <button type="submit" class="contact-button">Send Message</button>
+                </fieldset>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>
+                    <strong>Email:</strong> your.email@example.com<br>
+                    <strong>Phone:</strong> +1 234 567 890<br>
+                    <strong>Location:</strong> Your City, Your Country
+                </p>
+                <ul class="social-links">
+                    <li><a href="#" class="social-icon facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i> <span class="visually-hidden">Facebook</span>
+                    </a></li>
+                    <li><a href="#" class="social-icon twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i> <span class="visually-hidden">Twitter</span>
+                    </a></li>
+                    <li><a href="#" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i> <span class="visually-hidden">LinkedIn</span>
+                    </a></li>
+                    <li><a href="#" class="social-icon github">
+                        <i class="fab fa-github" aria-hidden="true"></i> <span class="visually-hidden">GitHub</span>
+                    </a></li>
+                    <li><a href="your-resume.pdf" target="_blank" rel="noopener noreferrer" class="social-icon resume">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i> <span class="visually-hidden">Resume</span>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2024 Ravy Lim. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
