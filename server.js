@@ -1,19 +1,22 @@
 require('dotenv').config();
 
 const express = require('express');
-const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const compression = require('compression');
+const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware to parse form data
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// Middleware for parsing form data and compressing responses
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(compression());
+app.use(morgan('dev'));
 
-// Serve static files from the public directory
-app.use(express.static('public'));
+// Serve static files from the public directory with caching
+app.use(express.static('public', { maxAge: '1d' }));
 
 // Serve index.html on root route
 app.get('/', (req, res) => {
@@ -28,6 +31,10 @@ app.post('/submit-form', async (req, res) => {
         return res.status(400).send('All fields are required.');
     }
 
+    // Send immediate response to client
+    res.status(200).send('Your message is being sent.');
+
+    // Handle email sending in the background
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -45,10 +52,9 @@ app.post('/submit-form', async (req, res) => {
 
     try {
         await transporter.sendMail(mailOptions);
-        res.status(200).send('Message sent successfully!');
+        console.log('Message sent successfully!');
     } catch (error) {
         console.error('Error sending email:', error);
-        res.status(500).send('Error sending message.');
     }
 });
 

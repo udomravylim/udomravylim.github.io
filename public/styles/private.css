@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 1000; /* Ensures it appears above other content */
+    background: #fff; /* Add a background color to prevent content overlap */
+    margin: 0; /* Remove any margin */
+    padding: 10px; /* Add some padding for better appearance */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for separation */
+}
+
+header {
+    position: sticky;
+    top: 65px; /* Adjust so it sits just below the sticky <h1> */
+    z-index: 999; /* Ensure it appears below the <h1> */
+    background: #333; /* Match your navigation background */
+    padding: 10px 0; /* Add vertical padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
+}
+  
+  header .main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header .main-nav ul li {
+    margin: 0 1rem;
+  }
+  
+  header .main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  header .main-nav ul li a:hover {
+    color: #d4f4dd;
+  }
+  
+  /* Main Section */
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .privacy-policy h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .privacy-policy ul {
+    list-style: square inside;
+    margin: 1rem 0;
+    padding: 0;
+  }
+  
+  .privacy-policy ul li {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  .privacy-policy a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .privacy-policy a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header .main-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header .main-nav ul li {
+      margin: 0.5rem 0;
+    }
+  
+    main {
+      padding: 1rem;
+    }
+  
+    .privacy-policy h2 {
+      font-size: 1.8rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  

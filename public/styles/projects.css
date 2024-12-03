@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideIn 0.8s ease-out;
+}
+
+.header {
+    width: 100%; /* Ensure the header spans the full width */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #4a4a4a, #2c2c2c);
+    color: white;
+    padding: 30px 20px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0; /* Remove default margin */
+}
+
+  
+  /* Sticky Header */
+  .header.sticky {
+    width: 100%; /* Ensure sticky header spans the full width */
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(12,27,100,1) 0%, rgba(20,68,109,1) 54%, rgba(36,151,174,1) 100%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+  
+  /* Glowing Light Animation */
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 150%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 20%);
+    animation: glowMove 7s linear infinite;
+    z-index: -1; /* Ensure the glow effect is behind the header content */
+  }
+  
+  /* Animation Keyframes */
+  @keyframes glowMove {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+  }
+  
+  
+  /* Hide elements when sticky */
+  .header.sticky .tagline, 
+  .header.sticky .links {
+    display: none; /* Hide the tagline and links */
+  }
+  
+  /* Logo Style */
+  .logo {
+    font-size: 3rem; /* Larger initial size */
+    font-weight: bold;
+    padding-bottom: 10px;
+    transition: font-size 0.3s ease-in-out; /* Smooth size transition */
+  }
+  
+  /* Shrink logo on sticky */
+  .header.sticky .logo {
+    font-size: 1.5rem; /* Smaller font size for sticky header */
+  }
+  
+  /* Navigation Styles */
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding-top: 10px;
+  }
+  
+  .main-nav li {
+    display: inline-block;
+  }
+  
+  .main-nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e7decc;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav a:hover {
+    color: #ff7b7b; /* Highlight color on hover */
+  }
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    cursor: pointer;
+    animation: fadeInUp 0.8s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card .card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-card .card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.project-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+}
+
+.project-card a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover a::after {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+  /* Footer Styles */
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer a{
+    color: bisque;
+   }
+   
+   .footer a:hover{
+     color: #d4f4dd;
+   }
+
+
+   /* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+        flex-direction: column;
+    }
+    .header::before {
+        display: none; /* Hide the glowing light effect */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+}
