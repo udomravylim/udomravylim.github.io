@@ -12,10 +12,10 @@
     <meta property="og:url" content="https://ravylim-portfolio.onrender.com">
     <meta property="og:type" content="website">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <script src="./js/script.js" defer></script>
-    <script src="./js/sticky.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="js/script.js" defer></script>
+    <script src="js/sticky.js" defer></script>
 
 </head>
 <body>
@@ -43,7 +43,11 @@
         <!-- About Section -->
         <section id="about" class="about">
             <h2>About Me</h2>
-            <p>Hello! I'm a passionate web developer skilled in creating beautiful and functional websites. Welcome to my portfolio!</p>
+            <p>Hello! My name is Ravy, and I’m a passionate web developer currently pursuing a degree in Web Design and Development.I’m constantly striving to enhance my skills and challenge myself with new projects. My journey in coding started with a curiosity for how the web works, and now I’m focused on becoming proficient in various aspects of web development, from front-end design to backend logic.
+            <br>  
+            <br>In addition to my academic and professional pursuits, I am also working on building a portfolio to showcase my projects and skills. I’ve completed several personal and academic projects, including HTML/CSS builds, interactive apps, and even exploring server-side technologies with Node.js.
+            <br>   
+            <br>Outside of coding, I love playing soccer and reading comics. These hobbies help me unwind and spark creativity. I’m always open to new challenges and excited about opportunities to grow in the tech field.</p>
         </section>
 
         <section id="projects" class="projects">
@@ -55,7 +59,7 @@
             </div>
             <div class="project">
                 <h3>Project 2</h3>
-                <p>Car Website with EJS&nbsp;<a href="https://cse340-student-template-main-7h0f.onrender.com" aria-label="View details of Project 2"> View Project</a></p>
+                <p>Car Website with Express&nbsp;<a href="https://cse340-student-template-main-7h0f.onrender.com" aria-label="View details of Project 2"> View Project</a></p>
             </div>
             <div class="project">
                 <h3>Project 3</h3>
@@ -87,10 +91,10 @@
             <p>Have a question or want to work together? Drop me a message below!</p>
 
             <!-- Contact Form -->
-            <form id="contactForm" action="/submit-form" method="POST" aria-labelledby="contact-heading">
-                <fieldset id="contactFieldset">
+            <!-- <form id="contactForm" action="/submit-form" method="POST" aria-labelledby="contact-heading">
+                <fieldset id="contactFieldset"> -->
                     <!-- <legend>Contact Form</legend> -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required aria-describedby="nameError">
                         <div id="nameError" class="form-error" aria-live="polite"></div>
@@ -107,7 +111,7 @@
                     </div>
                     <button type="submit" class="contact-button">Send Message</button>
                 </fieldset>
-            </form>
+            </form> -->
 
             <!-- Contact Info -->
             <div class="contact-info">
@@ -130,9 +134,9 @@
                     <li><a href="https://github.com/udomravylim?tab=repositories" class="social-icon github">
                         <i class="fab fa-github" aria-hidden="true"></i> <span class="visually-hidden">GitHub</span>
                     </a></li>
-                    <!-- <li><a href="your-resume.pdf" target="_blank" rel="noopener noreferrer" class="social-icon resume">
-                        <i class="fas fa-file-alt" aria-hidden="true"></i> <span class="visually-hidden">Resume</span>
-                    </a></li> -->
+                    <li><a href="mailto:udomravylim@gmail.com" class="social-icon email">
+                        <i class="fab fa-email" aria-hidden="true"></i> <span class="visually-hidden">Email</span>
+                    </a></li>
                 </ul>
             </div>
         </section>
@@ -142,16 +146,5 @@
     <footer class="footer" role="contentinfo">
         <p>&copy; 2024 Ravy Lim. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
     </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
